@@ -57,15 +57,15 @@ bin/kafka-topics.sh --list --zookeeper localhost:2181
 ```
 [root@localhost kafka_2.12-2.4.0]# bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test
 ```
-然后键入你想要发送的消息，按回车，消息就会发送到test这个topic上，被订阅的消费者接收。如下图：
+然后键入你想要发送的消息，按回车，消息就会发送到test这个topic上，被订阅的消费者接收。如下图：  
 ![images](https://github.com/baoge2778/images-library/blob/master/flink-demo3/1.png)
 
 ### 1.7.	用Kafka的console-consumer 消费topic test的消息
 ```
 [root@localhost kafka_2.12-2.4.0]# bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --from-beginning
 ```
-结果如下：
- ![images](https://github.com/baoge2778/images-library/blob/master/flink-demo3/2.png)
+结果如下：  
+![images](https://github.com/baoge2778/images-library/blob/master/flink-demo3/2.png)
 
 ## 2.	安装ElasticSearch
 
@@ -146,9 +146,9 @@ ulimit -Sn
 ulimit -Hu
 ulimit -Su
 ```
- ![images](https://github.com/baoge2778/images-library/blob/master/flink-demo3/6.png)
-修改后的文件：
- ![images](https://github.com/baoge2778/images-library/blob/master/flink-demo3/7.png)
+ ![images](https://github.com/baoge2778/images-library/blob/master/flink-demo3/6.png)  
+修改后的文件：  
+ ![images](https://github.com/baoge2778/images-library/blob/master/flink-demo3/7.png)  
 #### 2.5.3.	max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]
 　　	修改/etc/sysctl.conf文件，增加配置vm.max_map_count=262144
 ```
@@ -197,11 +197,11 @@ Bin目录下 `./start-cluster.sh` 启动
 
 ## 5.	DEMO演示一
 ### 5.1.	工程创建
-新建工程flink-demo，如下
-  ![images](https://github.com/baoge2778/images-library/blob/master/flink-demo3/8.png)
+新建工程flink-demo，如下  
+  ![images](https://github.com/baoge2778/images-library/blob/master/flink-demo3/8.png)  
 工程代码：
  https://github.com/baoge2778/flink-demo
-	代码中连接kafka和es的地址使用的是测试环境内网ip，如下
+	代码中连接kafka和es的地址使用的是测试环境内网ip，如下  
   ![images](https://github.com/baoge2778/images-library/blob/master/flink-demo3/9.png)
 
 ### 5.2.	本地测试
@@ -213,24 +213,24 @@ Bin目录下 `./start-cluster.sh` 启动
 [root@localhost bin]# ./kafka-topics.sh --create --zookeeper 172.16.0.140:2181 --replication-factor 1 --partitions 3 --topic topic001
 [root@localhost bin]# ./kafka-console-producer.sh --broker-list 172.16.0.140:9092 --topic topic001
 ```
-发送kafka消息
+发送kafka消息  
   ![images](https://github.com/baoge2778/images-library/blob/master/flink-demo3/11.png)
 #### 5.2.3.	查看结果
-进入kibana可见
+进入kibana可见  
   ![images](https://github.com/baoge2778/images-library/blob/master/flink-demo3/12.png)
 ### 5.3.	服务器测试
-导出jar包
-  ![images](https://github.com/baoge2778/images-library/blob/master/flink-demo3/13.png)
+导出jar包  
+  ![images](https://github.com/baoge2778/images-library/blob/master/flink-demo3/13.png)  
 
-进入flink管理页面，上传、输入entryClass（com.bg.flink.KafkaDemo），提交
+进入flink管理页面，上传、输入entryClass（com.bg.flink.KafkaDemo），提交  
   ![images](https://github.com/baoge2778/images-library/blob/master/flink-demo3/14.png)
 使用linux终端发送消息便可在kibana中可见。注意这个测试中服务器环境使用的flink版本是flink-1.7.1-bin-scala_2.11.tgz
 
 
 ## 6.	DEMO演示二
 ### 6.1.	工程创建
-新建工程flink-demo3，如下
-  ![images](https://github.com/baoge2778/images-library/blob/master/flink-demo3/15.png)
+新建工程flink-demo3，如下  
+  ![images](https://github.com/baoge2778/images-library/blob/master/flink-demo3/15.png)  
 工程代码：
 	 https://github.com/baoge2778/flink-demo3
 
@@ -244,7 +244,7 @@ Bin目录下 `./start-cluster.sh` 启动
 ```
 #### 6.2.2.	执行方法
 执行DataReport main方法，主体逻辑
-执行kafkaProducerDataReport main方法，用来随机生成kafka数据
+执行kafkaProducerDataReport main方法，用来随机生成kafka数据  
  ![images](https://github.com/baoge2778/images-library/blob/master/flink-demo3/16.png)
   ![images](https://github.com/baoge2778/images-library/blob/master/flink-demo3/17.png)
 
@@ -252,7 +252,7 @@ Bin目录下 `./start-cluster.sh` 启动
  
 
 #### 6.2.3.	查看结果
-进入kibana可见，http://172.16.0.140:5601/app/kibana
+进入kibana可见，http://172.16.0.140:5601/app/kibana  
  ![images](https://github.com/baoge2778/images-library/blob/master/flink-demo3/18.png)
  ![images](https://github.com/baoge2778/images-library/blob/master/flink-demo3/19.png)
  
