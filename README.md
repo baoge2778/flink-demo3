@@ -209,10 +209,10 @@ Bin目录下 `./start-cluster.sh` 启动
   ![images](https://github.com/baoge2778/images-library/blob/master/flink-demo3/10.png)
 
 #### 5.2.2.	创建topics并启动生产
-	[root@localhost bin]# ./kafka-topics.sh --create --zookeeper 172.16.0.140:2181 --replication-factor 1 --partitions 3 --topic topic001
-
-	[root@localhost bin]# ./kafka-console-producer.sh --broker-list 172.16.0.140:9092 --topic topic001
-
+```
+[root@localhost bin]# ./kafka-topics.sh --create --zookeeper 172.16.0.140:2181 --replication-factor 1 --partitions 3 --topic topic001
+[root@localhost bin]# ./kafka-console-producer.sh --broker-list 172.16.0.140:9092 --topic topic001
+```
 发送kafka消息
   ![images](https://github.com/baoge2778/images-library/blob/master/flink-demo3/11.png)
 #### 5.2.3.	查看结果
@@ -225,6 +225,7 @@ Bin目录下 `./start-cluster.sh` 启动
 进入flink管理页面，上传、输入entryClass（com.bg.flink.KafkaDemo），提交
   ![images](https://github.com/baoge2778/images-library/blob/master/flink-demo3/14.png)
 使用linux终端发送消息便可在kibana中可见。注意这个测试中服务器环境使用的flink版本是flink-1.7.1-bin-scala_2.11.tgz
+
 
 ## 6.	DEMO演示二
 ### 6.1.	工程创建
@@ -252,5 +253,7 @@ Bin目录下 `./start-cluster.sh` 启动
 
 #### 6.2.3.	查看结果
 进入kibana可见，http://172.16.0.140:5601/app/kibana
-  ![images](https://github.com/baoge2778/images-library/blob/master/flink-demo3/18.png)
-  ![images](https://github.com/baoge2778/images-library/blob/master/flink-demo3/19.png)
+ ![images](https://github.com/baoge2778/images-library/blob/master/flink-demo3/18.png)
+ ![images](https://github.com/baoge2778/images-library/blob/master/flink-demo3/19.png)
+ 
+ 
