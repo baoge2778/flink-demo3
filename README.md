@@ -58,7 +58,7 @@ bin/kafka-topics.sh --list --zookeeper localhost:2181
 [root@localhost kafka_2.12-2.4.0]# bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test
 ```
 然后键入你想要发送的消息，按回车，消息就会发送到test这个topic上，被订阅的消费者接收。如下图：
- 
+![images](https://github.com/baoge2778/images-library/blob/master/flink-demo3/1.png)
 
 ### 1.7.	用Kafka的console-consumer 消费topic test的消息
 ```
